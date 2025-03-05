@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Editor de Niveles - Angry Birds Clone - Revolucionado</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            background-color: #f0f0f0;
+        }
+        button, select {
+            margin: 5px;
+        }
+        #propiedades {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            border: 1px solid black;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="setMode('block')">Añadir Bloque</button>
+        <button onclick="setMode('hero')">Añadir Héroe</button>
+        <button onclick="setMode('villain')">Añadir Villano</button>
+
+        <select onchange="setMaterial(this.value)">
+            <option value="wood">Madera</option>
+            <option value="glass">Vidrio</option>
+            <option value="tnt">TNT</option>
+        </select>
+
+        <select onchange="setOrientacion(this.value)">
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+        </select>
+
+        <button onclick="eliminarEntidad()">Eliminar Seleccionado</button>
+        <button onclick="limpiarNivel()">Limpiar Nivel</button>
+        <button onclick="descargarNivel()">Descargar Nivel</button>
+    </div>
+
+    <canvas id="editorCanvas" width="800" height="600"></canvas>
+    <div id="propiedades"></div>
+
+    <script src="editor.js"></script>
+</body>
+</html>
